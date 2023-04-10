@@ -6,38 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="./src/style.css" />
     <title>World Clock - SheCodes Plus Add On Project - Natalie Martin</title>
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
-      <select id="city-selection">
-        <option value="">Select a city</option>
-        <option value="london">London</option>
-        <option value="new york">New York</option>
-        <option value="lisbon">Lisbon</option>
-      </select>
-      <div class="city">
-        <h2>Paris</h2>
-        <div class="date">Monday 10th April 2023</div>
-        <div class="time">15:23 PM</div>
+      <div class="current-city">
+        <h1>World Clock</h1>
+        <p>You're currently in:</p>
+        <div class="current-city-info">
+          <div>
+            <h2>Oslo</h2>
+            <div class="date">Monday 10th April 2023</div>
+          </div>
+          <div class="time">15:23 <small>PM</small></div>
+        </div>
+        <select id="city-selection">
+          <option value="">Select a city</option>
+          <option value="london">London</option>
+          <option value="new york">New York</option>
+          <option value="lisbon">Lisbon</option>
+        </select>
       </div>
-      <div class="city">
-        <h2>Rome</h2>
-        <div class="date">Monday 10th April 2023</div>
-        <div class="time">15:23 PM</div>
+      <div class="container-cities">
+        <div class="city">
+          <div class="container-date-left"></div>
+          <div>
+            <h2>Paris</h2>
+            <div class="date">Monday 10th April 2023</div>
+          </div>
+          <div class="time">15:23 <small>PM</small></div>
+        </div>
       </div>
-      <div class="city">
-        <h2>Copenhagen</h2>
-        <div class="date">Monday 10th April 2023</div>
-        <div class="time">15:23 PM</div>
-      </div>
+
       <footer>
         Coded by
-        <a href="https://github.com/natlmartin/SC-Plus-AddOn-World-Clock"
-          >Natalie Martin</a
-        >.
+        <strong
+          ><a href="https://github.com/natlmartin/SC-Plus-AddOn-World-Clock"
+            >Natalie Martin</a
+          ></strong
+        >. <br />Background image :
+        <a href="https://www.vecteezy.com/free-vector/woodland"
+          >Woodland Vectors by Vecteezy</a
+        >
       </footer>
     </div>
     <script src="./src/index.js"></script>
