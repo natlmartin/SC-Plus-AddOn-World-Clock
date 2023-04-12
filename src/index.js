@@ -32,5 +32,31 @@ function updateTime() {
   athensTime.innerHTML = athensZone.format("h:mm:ss [<small>]A[</small>]");
 }
 
+// Update container-cities with date and time for user-selected city
+
+function updateCity(event) {
+  let timeZone = event.target.value;
+  let cityName = timeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(timeZone);
+  let citiesElement = document.querySelector(".container-cities");
+  citiesElement.innerHTML = `
+  <div class="city" id="paris">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format(
+            "h:mm:ss [<small>]A[</small>]"
+          )};</div>
+        </div>
+        `;
+}
+
 updateTime();
 setInterval(updateTime, 1000);
+
+// Update date time to user-selected city upon change
+
+let userCity = document.querySelector("#city-selection");
+
+userCity.addEventListener("change", updateCity);
