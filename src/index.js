@@ -1,5 +1,19 @@
-// Get location of user
 // Update current location time
+
+function updateCurrentCity() {
+  let currentCityElement = document.querySelector(".current-city-info");
+  let currentCityTZ = moment.tz.guess();
+  let currentCityName = currentCityTZ.replace("_", " ").split("/")[1];
+  let currentCityTime = moment().tz(currentCityTZ);
+  currentCityElement.innerHTML = `
+<div>
+            <h2>${currentCityName}</h2>
+            <div class="date">${currentCityTime.format("Do MMMM YYYY")}</div>
+          </div>
+          <div class="time">${currentCityTime.format(
+            "h:mm:ss [<small>]A[</small>]"
+          )}</div>`;
+}
 
 // Get other locations
 
@@ -40,20 +54,22 @@ function updateCity(event) {
   let cityTime = moment().tz(timeZone);
   let citiesElement = document.querySelector(".container-cities");
   citiesElement.innerHTML = `
-  <div class="city" id="paris">
+  <div class="city">
           <div>
             <h2>${cityName}</h2>
             <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(
             "h:mm:ss [<small>]A[</small>]"
-          )};</div>
+          )}</div>
         </div>
         `;
 }
 
+updateCurrentCity();
 updateTime();
 setInterval(updateTime, 1000);
+setInterval(updateCurrentCity, 1000);
 
 // Update date time to user-selected city upon change
 
