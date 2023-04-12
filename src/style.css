@@ -99,6 +99,14 @@ a {
   align-self: flex-end;
 }
 
+#update-city {
+  color: #4a3840;
+}
+
+#update-link {
+  margin-top: 10px;
+}
+
 /*
 first color: #4A3840;
 second color: #99805f

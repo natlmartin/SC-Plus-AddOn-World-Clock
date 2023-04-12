@@ -63,6 +63,7 @@ function updateCity(event) {
             "h:mm:ss [<small>]A[</small>]"
           )}</div>
         </div>
+        <div id="update-link"><a id="update-city" href="i/">Back to all cities</a></div>
         `;
 }
 
